@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Pillar = ({
   title,
   items,
@@ -27,13 +29,31 @@ const Badge = ({ text }: { text: string }) => (
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
+
       {/* HERO */}
       <section className="px-6 pt-20 pb-12">
         <div className="mx-auto max-w-5xl text-center">
+
           <p className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/40 px-4 py-2 text-sm text-slate-300">
             <span className="h-2 w-2 rounded-full bg-teal-400" />
             SYSTEM ONLINE
           </p>
+
+          {/* FOTO PROFILO */}
+          <div className="mt-8 flex justify-center">
+            <div className="rounded-full p-[2px] bg-gradient-to-b from-teal-400/80 to-slate-900">
+              <div className="rounded-full bg-slate-950 p-1">
+                <Image
+                  src="/profile.jpg"
+                  alt="Serenella Angelilli"
+                  width={160}
+                  height={160}
+                  className="rounded-full object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
 
           <h1 className="mt-6 text-5xl md:text-6xl font-bold tracking-tight">
             Serenella Angelilli
@@ -98,8 +118,8 @@ export default function Home() {
             <Pillar
               title="Enterprise Experience"
               items={[
-                "Clienti/contesti: Telecom, INPS, Banca d’Italia",
-                "Ambienti mission-critical • processi di collaudo",
+                "Telecom • INPS • Banca d’Italia",
+                "Ambienti mission-critical",
                 "Analisi, sviluppo e gestione infrastruttura",
               ]}
             />
@@ -113,7 +133,7 @@ export default function Home() {
           <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-8">
             <h2 className="text-2xl font-bold">Core Tech Stack</h2>
             <p className="mt-2 text-slate-400">
-              Tecnologie che uso con autonomia operativa e approccio sistemistico.
+              Tecnologie utilizzate con autonomia operativa.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
@@ -144,25 +164,84 @@ export default function Home() {
         </div>
       </section>
 
+      {/* EXPERIENCE */}
+      <section className="px-6 pb-20">
+        <div className="mx-auto max-w-5xl">
+          <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-8">
+            <h2 className="text-2xl font-bold">Esperienza</h2>
+            <p className="mt-2 text-slate-400">
+              Ruoli chiave e contesti enterprise.
+            </p>
+
+            <div className="mt-8 space-y-6">
+
+              <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+                <div className="flex justify-between">
+                  <h3 className="font-semibold">
+                    Progettista e Analista di Sistemi Informatici
+                  </h3>
+                  <span className="text-sm text-slate-400">
+                    2020 → Oggi
+                  </span>
+                </div>
+                <p className="mt-1 text-slate-300">
+                  Cassagest Srl — Roma
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+                <div className="flex justify-between">
+                  <h3 className="font-semibold">
+                    Progettista e Analista di Sistemi Informatici
+                  </h3>
+                  <span className="text-sm text-slate-400">
+                    2018 → 2020
+                  </span>
+                </div>
+                <p className="mt-1 text-slate-300">
+                  Siriofin Spa — Roma
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+                <div className="flex justify-between">
+                  <h3 className="font-semibold">
+                    Sistemista / Web Developer / IT Manager
+                  </h3>
+                  <span className="text-sm text-slate-400">
+                    1993 → 2018
+                  </span>
+                </div>
+                <p className="mt-1 text-slate-300">
+                  Varie aziende — Roma
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="border-t border-slate-900 px-6 py-10">
         <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <span>© {new Date().getFullYear()} Serenella Angelilli</span>
           <div className="flex gap-4">
-            <a className="hover:text-slate-300" href="mailto:serenella.angelilli@gmail.com">
+            <a href="mailto:serenella.angelilli@gmail.com" className="hover:text-slate-300">
               Email
             </a>
             <a
-              className="hover:text-slate-300"
               href="https://linkedin.com/in/serenella-angelilli-865285b"
               target="_blank"
               rel="noreferrer"
+              className="hover:text-slate-300"
             >
               LinkedIn
             </a>
           </div>
         </div>
       </footer>
+
     </main>
   );
 }
