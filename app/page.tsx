@@ -20,14 +20,14 @@ type TimelineItem = {
   location?: string;
   bullets: string[];
   tag?: "Current" | "Parallel" | "Enterprise";
-  categories: Category[]; // include sempre "All" implicitamente via filtro
+  categories: Category[];
 };
 
 const Pillar = ({ title, items }: { title: string; items: string[] }) => (
   <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-xl">
     <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
-      <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-teal-400/10 blur-3xl" />
-      <div className="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-indigo-400/10 blur-3xl" />
+      <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-teal-400/12 blur-3xl" />
+      <div className="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-indigo-400/12 blur-3xl" />
     </div>
     <h3 className="relative text-lg font-semibold text-white">{title}</h3>
     <ul className="relative mt-4 space-y-2 text-slate-200/85">
@@ -59,9 +59,7 @@ const Tag = ({ kind }: { kind: NonNullable<TimelineItem["tag"]> }) => {
   }
   if (kind === "Parallel") {
     return (
-      <span
-        className={`${base} border-indigo-300/30 bg-indigo-400/10 text-indigo-200`}
-      >
+      <span className={`${base} border-indigo-300/30 bg-indigo-400/10 text-indigo-200`}>
         Parallel
       </span>
     );
@@ -96,25 +94,18 @@ const FilterButton = ({
   </button>
 );
 
-const ExperienceTimeline = ({
-  items,
-}: {
-  items: TimelineItem[];
-}) => (
-  <div className="mt-10 relative">
+const ExperienceTimeline = ({ items }: { items: TimelineItem[] }) => (
+  <div className="mt-8 relative">
     <div className="absolute left-4 top-0 h-full w-px bg-white/10" />
     <div className="space-y-8">
       {items.map((job) => (
-        <div
-          key={`${job.period}-${job.company}-${job.role}`}
-          className="relative pl-12"
-        >
+        <div key={`${job.period}-${job.company}-${job.role}`} className="relative pl-12">
           <div className="absolute left-4 top-2 -translate-x-1/2 h-3 w-3 rounded-full bg-teal-300 shadow-[0_0_0_4px_rgba(94,234,212,0.12)]" />
 
           <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-xl">
             <div className="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
-              <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-teal-400/10 blur-3xl" />
-              <div className="absolute -right-20 -bottom-20 h-56 w-56 rounded-full bg-indigo-400/10 blur-3xl" />
+              <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-teal-400/12 blur-3xl" />
+              <div className="absolute -right-20 -bottom-20 h-56 w-56 rounded-full bg-indigo-400/12 blur-3xl" />
             </div>
 
             <div className="relative flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
@@ -127,9 +118,7 @@ const ExperienceTimeline = ({
 
             <p className="relative mt-1 text-slate-100/80">
               {job.company}
-              {job.location ? (
-                <span className="text-slate-100/55"> • {job.location}</span>
-              ) : null}
+              {job.location ? <span className="text-slate-100/55"> • {job.location}</span> : null}
             </p>
 
             <ul className="relative mt-4 space-y-2 text-slate-100/80">
@@ -391,9 +380,9 @@ export default function Home() {
       {/* BACKGROUND FUTURISTICO */}
       <div className="fixed inset-0 -z-10 bg-slate-950">
         {/* aurora blobs */}
-        <div className="absolute -top-32 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-teal-500/20 blur-3xl animate-pulse" />
-        <div className="absolute top-40 -left-20 h-[520px] w-[520px] rounded-full bg-indigo-500/20 blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 h-[520px] w-[520px] rounded-full bg-cyan-500/10 blur-3xl animate-pulse" />
+        <div className="absolute -top-32 left-1/2 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-teal-500/22 blur-3xl animate-pulse" />
+        <div className="absolute top-40 -left-20 h-[560px] w-[560px] rounded-full bg-indigo-500/22 blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 h-[560px] w-[560px] rounded-full bg-cyan-500/12 blur-3xl animate-pulse" />
 
         {/* grid overlay */}
         <div
@@ -406,7 +395,7 @@ export default function Home() {
         />
 
         {/* vignette */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/55" />
       </div>
 
       {/* HERO */}
@@ -421,7 +410,7 @@ export default function Home() {
             <div className="rounded-full p-[2px] bg-gradient-to-b from-teal-300/80 via-indigo-300/40 to-white/5">
               <div className="rounded-full bg-slate-950/70 p-1 backdrop-blur">
                 <Image
-                  src="/profile.jpg"
+                  src="/profile.png"
                   alt="Serenella Angelilli"
                   width={168}
                   height={168}
@@ -545,31 +534,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPERIENCE + FILTER */}
+      {/* EXPERIENCE + STICKY FILTER */}
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-5xl">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-xl">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <div>
-                <h2 className="text-2xl font-bold">Esperienza</h2>
-                <p className="mt-2 text-slate-100/70">
-                  Timeline completa. Filtra per area per vedere subito ciò che interessa al recruiter.
-                </p>
-              </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 shadow-[0_0_0_1px_rgba(255,255,255,0.06)] backdrop-blur-xl overflow-hidden">
+            <div className="p-8">
+              <h2 className="text-2xl font-bold">Esperienza</h2>
+              <p className="mt-2 text-slate-100/70">
+                Timeline completa. Filtra per area per vedere subito ciò che interessa al recruiter.
+              </p>
+            </div>
 
-              <div className="flex flex-wrap gap-2">
-                {categories.map((c) => (
-                  <FilterButton
-                    key={c}
-                    label={c}
-                    active={filter === c}
-                    onClick={() => setFilter(c)}
-                  />
-                ))}
+            {/* sticky bar */}
+            <div className="sticky top-0 z-20 border-y border-white/10 bg-slate-950/55 backdrop-blur-xl">
+              <div className="mx-auto max-w-5xl px-8 py-3">
+                <div className="flex flex-wrap gap-2">
+                  {categories.map((c) => (
+                    <FilterButton
+                      key={c}
+                      label={c}
+                      active={filter === c}
+                      onClick={() => setFilter(c)}
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-2 text-xs text-slate-100/55">
+                  Showing: <span className="text-slate-100/80">{filter}</span> • Results:{" "}
+                  <span className="text-slate-100/80">{filteredExperience.length}</span>
+                </div>
               </div>
             </div>
 
-            <ExperienceTimeline items={filteredExperience} />
+            <div className="p-8 pt-4">
+              <ExperienceTimeline items={filteredExperience} />
+            </div>
           </div>
         </div>
       </section>
@@ -579,10 +578,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-100/55">
           <span>© {new Date().getFullYear()} Serenella Angelilli</span>
           <div className="flex gap-4">
-            <a
-              href="mailto:serenella.angelilli@gmail.com"
-              className="hover:text-slate-100"
-            >
+            <a href="mailto:serenella.angelilli@gmail.com" className="hover:text-slate-100">
               Email
             </a>
             <a
