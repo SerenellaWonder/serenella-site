@@ -44,7 +44,7 @@ export default function Home() {
             <div className="rounded-full p-[2px] bg-gradient-to-b from-teal-400/80 to-slate-900">
               <div className="rounded-full bg-slate-950 p-1">
                 <Image
-                  src="/profile.jpg"
+                  src="/profile.png"
                   alt="Serenella Angelilli"
                   width={160}
                   height={160}
