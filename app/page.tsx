@@ -163,6 +163,146 @@ export default function Home() {
           </div>
         </div>
       </section>
+              {/* EXPERIENCE */}
+<section className="px-6 pb-20">
+  <div className="mx-auto max-w-5xl">
+    <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-8">
+      <h2 className="text-2xl font-bold">Esperienza</h2>
+      <p className="mt-2 text-slate-400">
+        Percorso professionale con focus su sistemi, infrastrutture e sviluppo in contesti enterprise.
+      </p>
+
+      <div className="mt-10 relative">
+        {/* linea verticale */}
+        <div className="absolute left-4 top-0 h-full w-px bg-slate-800" />
+
+        <div className="space-y-8">
+          {/* 2020 - Oggi */}
+          <div className="relative pl-12">
+            <div className="absolute left-4 top-2 -translate-x-1/2 h-3 w-3 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(13,148,136,0.15)]" />
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                <h3 className="text-lg font-semibold">
+                  Progettista e Analista di Sistemi Informatici
+                </h3>
+                <span className="text-sm text-slate-400">Mar 2020 → Oggi</span>
+              </div>
+              <p className="mt-1 text-slate-300">Cassagest Srl — Roma</p>
+              <ul className="mt-4 space-y-2 text-slate-300">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Web development (HTML/CSS/PHP) e UX/UI</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Amministrazione sistemi • Supporto 3° livello • Problem solving</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Business Intelligence e supporto trasversale alle esigenze aziendali</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 2018 - 2020 */}
+          <div className="relative pl-12">
+            <div className="absolute left-4 top-2 -translate-x-1/2 h-3 w-3 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(13,148,136,0.15)]" />
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                <h3 className="text-lg font-semibold">
+                  Progettista e Analista di Sistemi Informatici
+                </h3>
+                <span className="text-sm text-slate-400">Lug 2018 → Mar 2020</span>
+              </div>
+              <p className="mt-1 text-slate-300">Siriofin Spa — Roma</p>
+              <ul className="mt-4 space-y-2 text-slate-300">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Web application enterprise con integrazioni SOAP/XML</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>LAMP in contesto Microsoft • Apache/IIS • PHP7 • MSSQL</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Test (alfa/beta), collaudo e produzione per clienti istituzionali</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 2017 - 2018 */}
+          <div className="relative pl-12">
+            <div className="absolute left-4 top-2 -translate-x-1/2 h-3 w-3 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(13,148,136,0.15)]" />
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                <h3 className="text-lg font-semibold">
+                  Sviluppatore Web • E-commerce Manager • Sistemista
+                </h3>
+                <span className="text-sm text-slate-400">Gen 2017 → Mag 2018</span>
+              </div>
+              <p className="mt-1 text-slate-300">ABwise Srl — Roma</p>
+              <ul className="mt-4 space-y-2 text-slate-300">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Automazione import massivo prodotti (CSV → PrestaShop) con bash + SQL</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Realizzazione siti (Bootstrap/WordPress) e integrazioni custom (PHP/JS)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 2016 - 2017 */}
+          <div className="relative pl-12">
+            <div className="absolute left-4 top-2 -translate-x-1/2 h-3 w-3 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(13,148,136,0.15)]" />
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                <h3 className="text-lg font-semibold">
+                  Sistemista Applicativo e Rete Mobile (c/o TIM)
+                </h3>
+                <span className="text-sm text-slate-400">Lug 2016 → Dic 2017</span>
+              </div>
+              <p className="mt-1 text-slate-300">Evolution Tech Services — Roma</p>
+              <ul className="mt-4 space-y-2 text-slate-300">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Gestione infrastrutture OMC (Nokia, Ericsson, Huawei)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-teal-400" />
+                  <span>Supporto territorio con ticketing (Remedy)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* EARLIER ROLES (compattato) */}
+          <div className="relative pl-12">
+            <div className="absolute left-4 top-2 -translate-x-1/2 h-3 w-3 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(13,148,136,0.15)]" />
+            <div className="rounded-2xl border border-slate-800 bg-slate-950/50 p-6">
+              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                <h3 className="text-lg font-semibold">Earlier Roles</h3>
+                <span className="text-sm text-slate-400">1993 → 2016</span>
+              </div>
+              <p className="mt-1 text-slate-300">
+                Data center • Unix/Linux • Reti • VoIP • IT management • Portali web
+              </p>
+              <p className="mt-3 text-sm text-slate-400">
+                (Posso espandere questa sezione con tutte le aziende e le date, mantenendo un layout pulito.)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* EXPERIENCE */}
       <section className="px-6 pb-20">
